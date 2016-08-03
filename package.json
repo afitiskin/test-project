@@ -1,0 +1,25 @@
+{
+  "name": "some-project",
+  "version": "1.0.0",
+  "description": "some description here",
+  "main": "index.js",
+  "dependencies": {
+    "fotorama": "^4.6.4",
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "cssmin": "^0.4.3",
+    "less": "^2.7.1",
+    "rimraf": "^2.5.4"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "build-scripts": "browserify src/main.js > dist/bundle.js",
+    "build-styles": "lessc src/styles.less | cssmin > dist/styles.css",
+    "build": "npm run build-scripts && npm run build-styles",
+    "prebuild": "npm run clean"
+  },
+  "author": "Alex Fitiskin",
+  "license": "ISC"
+}
